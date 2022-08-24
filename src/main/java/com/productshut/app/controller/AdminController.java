@@ -3,8 +3,11 @@ package com.productshut.app.controller;
 import com.productshut.app.model.Admin;
 import com.productshut.app.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -14,8 +17,14 @@ public class AdminController {
     AdminService service ;
 
     @PostMapping("/addAdmin")
-    public Admin addAdmin(@RequestBody Admin admin){
-        return service.saveAdmin(admin) ;
+    public ResponseEntity<Admin> addAdmin(@RequestBody Admin admin){
+
+        Admin savedAdmin = service.saveAdmin(admin) ;
+        URI location =  ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(savedAdmin.getAdminId()).toUri() ;
+        return ResponseEntity.created(location).build() ;
     }
 
     @GetMapping("/admins")
