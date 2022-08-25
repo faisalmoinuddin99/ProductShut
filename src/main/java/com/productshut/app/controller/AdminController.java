@@ -1,7 +1,7 @@
 package com.productshut.app.controller;
 
 import com.productshut.app.model.Admin;
-import com.productshut.app.service.AdminService;
+import com.productshut.app.service.AdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 public class AdminController {
 
     @Autowired
-    AdminService service ;
+    AdminServiceImpl service ;
 
     @PostMapping("/addAdmin")
     public ResponseEntity<Admin> addAdmin(@RequestBody Admin admin){

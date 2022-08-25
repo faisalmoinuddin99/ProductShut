@@ -15,7 +15,7 @@ import java.util.Date;
 public class TimeSlot {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "timeSlotId")
     private int timeSlotId;
 

@@ -1,7 +1,7 @@
 package com.productshut.app.controller;
 
 import com.productshut.app.model.Product;
-import com.productshut.app.service.ProductService;
+import com.productshut.app.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    ProductService service;
+    ProductServiceImpl service;
 
     @PostMapping("/addProduct")
     public Product addProduct(@RequestBody Product product) {
