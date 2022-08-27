@@ -1,0 +1,22 @@
+package com.productshut.app.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class CustomerDTO {
+
+    private int customerId;
+
+    private String customerName;
+
+    private String emailId;
+
+    private String phoneNo;
+
+    private String address;
+}

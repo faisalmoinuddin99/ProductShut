@@ -8,4 +8,6 @@ public interface AdminService {
     public Admin saveAdmin(Admin admin) ;
     public List<Admin> getAdmins() ;
     public String deleteAdmin(int id) ;
+
+    public Admin getAdminById(int id) ;
 }
