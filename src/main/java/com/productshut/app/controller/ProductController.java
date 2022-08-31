@@ -4,6 +4,8 @@ import com.productshut.app.dto.ProductDTO;
 import com.productshut.app.model.Product;
 import com.productshut.app.service.ProductServiceImpl;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Level;
 
 @RestController
 public class ProductController {
 
+    private static final Logger logger = LoggerFactory.getLogger(ProductController.class) ;
     @Autowired
     ProductServiceImpl service;
 
@@ -33,6 +37,7 @@ public class ProductController {
 
     @GetMapping(path = "/products")
     public List<Product> findAllProducts() {
+        logger.debug("List of products");
         return service.getProducts();
     }
 
@@ -59,6 +64,7 @@ public class ProductController {
 
     @PutMapping("/update")
     public Product updateProducts(@RequestBody Product products) {
+
         return service.updateProduct(products) ;
     }
 

@@ -7,4 +7,6 @@ import java.util.List;
 public interface CustomerService {
     public Customer addCustomer(Customer customer) ;
     public List<Customer> getCustomers() ;
+
+    public Customer getCustomerByEmailAndPhoneNo(String email, String phoneNo) ;
 }

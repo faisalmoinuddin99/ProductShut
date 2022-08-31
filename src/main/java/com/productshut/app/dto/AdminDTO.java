@@ -14,5 +14,6 @@ public class AdminDTO {
 
     private int adminId;
     private String userName;
+    private boolean isDeleted ;
 
 }

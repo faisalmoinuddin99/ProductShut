@@ -10,4 +10,6 @@ public interface AdminService {
     public String deleteAdmin(int id) ;
 
     public Admin getAdminById(int id) ;
+
+    public List<Admin> getAdminByDeletedStatus(boolean status) ;
 }

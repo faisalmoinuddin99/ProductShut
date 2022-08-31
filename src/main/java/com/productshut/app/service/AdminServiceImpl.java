@@ -24,6 +24,11 @@ public class AdminServiceImpl implements AdminService{
         return repository.findById(id).orElse(null) ;
     }
 
+    @Override
+    public List<Admin> getAdminByDeletedStatus(boolean status) {
+        return repository.findByIsDeleted(status);
+    }
+
     public String deleteAdmin(int id){
        repository.deleteById(id);
        return "Admin deleted " + id ;

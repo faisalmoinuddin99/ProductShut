@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Admin {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "adminId")
     private int adminId;
 
@@ -23,5 +23,8 @@ public class Admin {
 
     @Column(name = "password")
     private String password;
+
+    @Column(columnDefinition = "boolean default false")
+    private boolean isDeleted ;
 
 }

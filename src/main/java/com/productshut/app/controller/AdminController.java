@@ -62,4 +62,9 @@ public class AdminController {
         return new ResponseEntity<AdminDTO>(responseAdminDTO, HttpStatus.OK) ;
     }
 
+    @GetMapping("/adminByDeletedStatus/{status}")
+    public List<Admin> getAdminDetailsByDeletedStatus(@PathVariable boolean status){
+        return  service.getAdminByDeletedStatus(status) ;
+    }
+
 }
